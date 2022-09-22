@@ -7,9 +7,6 @@ tasks:
       rvm install $(cat .ruby-version)
       rvm use $(cat .ruby_version)
       bundle install
-    command: |
       docker build -t salus-local .
       docker build -f Dockerfile.tests -t salus-integration-tests .
       docker run salus-integration-tests
-
-
